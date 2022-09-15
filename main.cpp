@@ -20,6 +20,22 @@ int main(int argc, char* argv[])
 	fstream inputFile(/*argv[2]*/"input2.txt",ios::in);
 	fstream outputFile(/*argv[3]*/"mysolution2.txt",ios::out);
 	
+	
+	if(argc != 3){
+		cout << "error" << endl;
+		return -1;
+	}
+	inputFile.open(argv[1]);
+	if(inputFile.fail()){
+		cout << "couldn't open input file" << endl;
+		return -1;
+	}
+	outputFile.open(argv[2]);
+	if(outputFile.fail()){
+		cout << "couldn't open the ouputfile" << endl;
+		return -1;
+	}
+	
 	//We set some important variables & regexs
 	string currentLine;
 	vector <string> matchLines;
